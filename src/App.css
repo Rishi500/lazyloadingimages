@@ -1,7 +1,14 @@
 .App {
   text-align: center;
 }
-
+img {
+  height: 300px;
+  width: 400px;
+  display: flex;
+  margin: auto;
+  padding: 1rem;
+  object-fit: cover;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

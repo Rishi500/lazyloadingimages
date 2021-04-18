@@ -3,10 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import LazyLoad from 'react-lazyload';
 import axios from 'axios'
+require('dotenv').config()
 
 function App() {
   const [images,setImages] = useState([])
-  const url = 'https://api.unsplash.com/photos/?client_id=6QtAovKkHMIH_Z4KMFNKYOWkIM685b-SQisRUkShoC0'
+  const url = process.env.REACT_APP_IMG_API_URL
+  console.log(url)
   useEffect(()=>{
     axios({
       method:'GET',
@@ -23,7 +25,7 @@ function App() {
   return (
     <div>
       {images.map(i=>{return(
-        <LazyLoad height={500}><img src={i.urls.regular} key={i.id} height="500px" widhth="500px"/></LazyLoad>
+        <LazyLoad height={500}><img src={i.urls.regular} key={i.id}/></LazyLoad>
       )})}
     </div>
   );
